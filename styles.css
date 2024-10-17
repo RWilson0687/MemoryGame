@@ -1,7 +1,69 @@
-#grid {
-    width: 400px;
-    height: 300px;
+/* Ensure the body takes the full viewport height and centers content */
+body {
+    margin: 0;
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items at the top */
+    align-items: center;
+    background-color: #282c34; /* Dark background for consistency */
+    font-family: Arial, sans-serif;
+    color: white;
+}
 
+/* Styling for the game container */
+.game-container {
+    position: relative;
+    width: 600px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    background-color: black; /* Consistent black background */
+    border: 5px solid white; /* White border for game container */
+}
+
+/* Grid styling for memory game */
+#grid {
+    width: 430px; /* Adjust width for the memory game grid */
+    height: 320px; /* Adjust height for the memory game grid */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust columns as per your game layout */
+    grid-template-rows: repeat(3, 1fr);    /* Adjust rows as per your game layout */
+    gap: 10px; /* Add some space between cards */
+    border: 2px solid white; /* Add border around the grid */
+    background-color: #444; /* Dark grid background for consistency */
+}
+
+/* Styling for individual card elements */
+#grid div {
+    background-color: #ccc; /* Default background color for cards */
+    width: 100px; /* Adjust card width */
+    height: 100px; /* Adjust card height */
+    border: 2px solid #666; /* Border for each card */
+    border-radius: 8px; /* Rounded corners for cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+#grid div:hover {
+    background-color: #fff; /* Change card color on hover */
+    cursor: pointer; /* Change cursor to pointer */
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+/* Active or selected card state */
+.selected {
+    background-color: #4CAF50; /* Change color when a card is selected */
+}
+
+/* Styling for the game header (score or current player, if any) */
+h3 {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin: 20px 0;
 }
