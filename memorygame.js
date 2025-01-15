@@ -212,3 +212,8 @@ function flipCard() {
         This function is essential for the game's interactivity, as it responds to player actions and facilitates the matching logic.
     */
 }
+
+//Function to refresh the page
+function refreshPage() {
+    location.reload(); // Reloads the page
+}
